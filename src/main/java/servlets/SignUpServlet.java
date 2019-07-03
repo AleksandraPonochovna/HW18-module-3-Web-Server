@@ -16,14 +16,7 @@ public class SignUpServlet extends HttpServlet {
     public SignUpServlet(UsersDaoImpl user) {
         this.user = user;
     }
-
-    @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response)
-            throws IOException, ServletException {
-        request.getRequestDispatcher("/signup.jsp").forward(request, response);
-        doPost(request, response);
-    }
-
+    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String login = request.getParameter("login");
