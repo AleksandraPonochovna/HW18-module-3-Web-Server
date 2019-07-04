@@ -9,8 +9,8 @@ import java.util.Objects;
 
 public class UsersDaoImpl implements UsersDao {
     private DBHandler dbHandler;
-    private final String SEARCH_USER_IN_DB = "select * from users where login=? and password=?";
-    private final String ADD_USER = "insert into users(login, password) values(?, ?)";
+    private final String SEARCH_USER_IN_DB = "SELECT* FROM users WHERE login=? AND password=?";
+    private final String ADD_USER = "INSERT INTO users(login, password) VALUES(?, ?)";
 
     public UsersDaoImpl() {
         dbHandler = new DBHandler();

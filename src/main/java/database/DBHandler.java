@@ -14,6 +14,8 @@ public class DBHandler {
     private final String MY_DB_NAME = "mydbtest";
     private static final String TIME_ZONE = "?useUnicode=true&useJDBCCompliantTimezoneShift=" +
             "true&useLegacyDatetimeCode=false&serverTimezone=UTC";
+    private static final String USER = "root";
+    private static final String PASSWORD = "aleksandra";
 
     public DBHandler() {
        this.connection = openConnection();
@@ -29,7 +31,7 @@ public class DBHandler {
                     .append(DB_PORT)
                     .append(MY_DB_NAME)
                     .append(TIME_ZONE);
-            return DriverManager.getConnection(url.toString(), "root", "aleksandra");
+            return DriverManager.getConnection(url.toString(), USER, PASSWORD);
         } catch (ClassNotFoundException | IllegalAccessException |
                 InstantiationException | SQLException ex) {
             ex.printStackTrace();
