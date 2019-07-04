@@ -10,7 +10,7 @@ public class DBHandler {
     private final String DB_TYPE = "jdbc:mysql://";
     private final String DB_HOST = "localhost:";
     private final String DB_PORT = "3306/";
-    private final String mySqlDriver = "com.mysql.cj.jdbc.Driver";
+    private final String MY_SQL_DRIVER = "com.mysql.cj.jdbc.Driver";
     private final String MY_DB_NAME = "mydbtest";
     private static final String TIME_ZONE = "?useUnicode=true&useJDBCCompliantTimezoneShift=" +
             "true&useLegacyDatetimeCode=false&serverTimezone=UTC";
@@ -21,7 +21,7 @@ public class DBHandler {
 
     private Connection openConnection() {
         try {
-            Driver driver = (Driver) Class.forName(mySqlDriver).newInstance();
+            Driver driver = (Driver) Class.forName(MY_SQL_DRIVER).newInstance();
             DriverManager.registerDriver(driver);
             StringBuilder url = new StringBuilder();
             url.append(DB_TYPE)
